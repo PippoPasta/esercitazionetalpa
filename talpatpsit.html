@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <style>
+    .parent{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+        width: 300px;
+    }
+    .child{
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+
+    .active{
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <br>
+    <br>
+    <div class="startGameWrapper">
+        <a class="nes-btn" href="#">Inizia Gioco</a>
+    </div>
+    <script>
+
+        function activeEventListener(e){
+            console.log(e.currentTarget)
+        }
+
+
+        // Questo addEventListener lo devo assegnare dopo che ho almeno 1 elemento con classe active
+        // document.querySelector(".active").addEventListener("click", activeEventListener)
+
+        // Step 1: addEventListener sul pulsante ci start game per avviare il gioco
+
+        /*
+            Una volta che il gioco è avviato dobbiamo identificare in maniera randomica:
+            1- un tempo (che sarà quello di "accensione" di una casella)
+            2- un elemento fra quelli della griglia
+
+            nel loop di gioco principale:
+            - identificare un elemento casuale all'interno della griglia (recuperare getRandomInt)
+            - assegnare la classe active nell'elemento
+            - usare setTimeout per rimuovere la classe dopo un tempo randomico
+            - nel setTimeout bisogna anche rimuovere l'eventListener
+
+            Mentre la classe active è assegnata all'elemento bisogna tenere attivo un eventListener
+        */
+    </script>
+</body>
+</html>
